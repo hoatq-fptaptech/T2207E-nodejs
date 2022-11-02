@@ -7,11 +7,11 @@ app.listen(PORT,function () {
 });
 // config to connect mysql
 const configDB = {
-  host: "localhost",
+  host: "139.180.186.20",
   port: 3306,
-  database: "T2207E",
-  user: "root",
-  password:"root", // mamp : "root" -- xampp: ""
+  database: "t2207e",
+  user: "t2207e",
+  password:"t2207e123", // mamp : "root" -- xampp: ""
   multipleStatements: true // cho phép sử dụng nhiều câu SQL 1 lần gửi yêu cầu
 };
 // connect to mysql
@@ -90,3 +90,20 @@ app.get("/detail-student",function (req,res) {
         }
     })
 });
+
+app.get("/student",function (req,res) {
+    // liet ke sinh vien
+    res.send("Student with GET");
+})
+app.post("/student",function (req,res) {
+    // them 1 sv
+    res.send("Student with POST");
+})
+app.put("/student",function (req,res) {
+    // update sv
+    res.send("Student with PUT");
+})
+app.delete("/student",function (req,res) {
+    // delete sv
+    res.send("Student with DELETE");
+})
